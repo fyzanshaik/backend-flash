@@ -2,20 +2,21 @@ import express from 'express';
 import cors from 'cors';
 import flashCardRoute from './routes/flashCardRoute';
 import helloWorld from './routes/helloWorld';
+
 const app = express();
 app.use(express.json());
 
 const corsOptions = {
-	origin: 'https://flash-card-app-xi.vercel.app/',
+	origin: ['https://frontend-flash-61iiaohr4-fyzanshaiks-projects.vercel.app', 'https://frontend-flash-phi.vercel.app'],
 	methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
 	credentials: true,
 };
 
 app.use(cors(corsOptions));
+
 const PORT = process.env.PORT || 3000;
 
 app.use('/', helloWorld);
-
 app.use('/api', flashCardRoute);
 
 app.listen(PORT, () => {

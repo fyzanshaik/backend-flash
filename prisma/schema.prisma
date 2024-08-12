@@ -10,7 +10,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = "postgresql://neondb_owner:HxB4s6ATmIvi@ep-broad-king-a509ip52.us-east-2.aws.neon.tech/neondb?sslmode=require"
 }
 
 model FlashCard {
